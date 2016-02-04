@@ -3,8 +3,22 @@
 // =============================================================================
 
 
+/*------------------------------------*\
+       $HEADER AND CONTENT POSITION
+\*------------------------------------*/
+$pagehead-height: 100px;
 
+header.page-head {
+ width:100%;
+ height:$pagehead-height;
+ position:fixed;
+ top:0;
+ left:0;
+}
 
+div.page-content {
+  padding-top:$pagehead-height;
+}
 
 
 
@@ -83,7 +97,7 @@
     opacity: 0;
   }
     /* When active, rotate line 3 to be righthand part of X */
-  .hamburger-icon__line-3 {
-    transform: translateY(-8px) translateX(0) rotate(-45deg);
+    .hamburger-icon__line-3 {
+      transform: translateY(-8px) translateX(0) rotate(-45deg);
+    }
   }
-}
