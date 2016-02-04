@@ -1,3 +1,89 @@
 //
-// <Project name>
+// jekyll-convert
 // =============================================================================
+
+/*------------------------------------*\
+    $NAVBAR
+\*------------------------------------*/
+.site-nav {
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  background-color: whitesmoke;
+  // justify-content: space-around;
+}
+
+.site-nav__item {
+  margin: auto;
+}
+
+.hamburger {
+  border: 0;
+  padding: 2.4rem;
+  display: inline-block;
+  background-color: #fff;
+}
+
+.hamburger.hamburger-top {
+  padding: 1rem;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.hamburger:hover {
+  cursor: pointer;
+}
+
+.icon-menu {
+  position: relative;
+  display: inline-block;
+  width: 28px;
+  height: 20px;
+  vertical-align: middle;
+  fill: none;
+}
+
+/* Global menu icon line styles */
+.icon-menu .line {
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  background-color: black;
+}
+
+/* Menu icon line 1 */
+.icon-menu .line-1 {
+  top: 0;
+}
+
+/* When active, rotate line 1 to be lefthand part of X */
+.is-active .icon-menu .line-1 {
+  transform: translateY(8px) translateX(0) rotate(45deg);
+}
+
+/* Line 2 */
+.icon-menu .line-2 {
+  top: 50%;
+  margin-top: -2px;
+}
+
+/* When active, hide line 2 */
+.is-active .icon-menu .line-2 {
+  opacity: 0;
+}
+
+/* Line 3 */
+.icon-menu .line-3 {
+  bottom: 0;
+}
+
+/* When active, rotate line 3 to be righthand part of X */
+.is-active .icon-menu .line-3 {
+  transform: translateY(-8px) translateX(0) rotate(-45deg);
+}
+
+
