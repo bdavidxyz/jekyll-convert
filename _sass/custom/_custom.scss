@@ -2,37 +2,48 @@
 // jekyll-convert
 // =============================================================================
 
+
+
+
+
+
+
+
 /*------------------------------------*\
-    $NAVBAR
+                $NAVBAR
 \*------------------------------------*/
 .site-nav {
   display: flex;
   flex-direction: row;
   height: 100px;
   background-color: whitesmoke;
-  // justify-content: space-around;
+// justify-content: space-around;
 }
-
 .site-nav__item {
   margin: auto;
 }
 
+
+
+
+
+
+/*------------------------------------*\
+                $NAVBAR : Hamburger
+\*------------------------------------*/
 .hamburger {
   border: 0;
   padding: 2.4rem;
   display: inline-block;
 }
-
-.hamburger.hamburger-top {
+.hamburger-top {
   padding: 1rem;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
-
 .hamburger:hover {
   cursor: pointer;
 }
-
 .hamburger-icon {
   position: relative;
   display: inline-block;
@@ -41,9 +52,8 @@
   vertical-align: middle;
   fill: none;
 }
-
 /* Global menu icon line styles */
-.hamburger-icon .hamburger-icon__line {
+.hamburger-icon__line {
   position: absolute;
   left: 0;
   display: block;
@@ -53,36 +63,27 @@
   transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
   background-color: black;
 }
-
-/* Menu icon line 1 */
-.hamburger-icon .hamburger-icon__line-1 {
+.hamburger-icon__line-1 {
   top: 0;
 }
-
-/* When active, rotate line 1 to be lefthand part of X */
-.is-active .hamburger-icon .hamburger-icon__line-1 {
-  transform: translateY(8px) translateX(0) rotate(45deg);
-}
-
-/* Line 2 */
-.hamburger-icon .hamburger-icon__line-2 {
+.hamburger-icon__line-2 {
   top: 50%;
   margin-top: -2px;
 }
-
-/* When active, hide line 2 */
-.is-active .hamburger-icon .hamburger-icon__line-2 {
-  opacity: 0;
-}
-
-/* Line 3 */
-.hamburger-icon .hamburger-icon__line-3 {
+.hamburger-icon__line-3 {
   bottom: 0;
 }
-
-/* When active, rotate line 3 to be righthand part of X */
-.is-active .hamburger-icon .hamburger-icon__line-3 {
-  transform: translateY(-8px) translateX(0) rotate(-45deg);
+/* When active, rotate line 1 to be lefthand part of X */
+.is-active {
+  .hamburger-icon__line-1 {
+    transform: translateY(8px) translateX(0) rotate(45deg);
+  }
+  /* When active, hide line 2 */
+  .hamburger-icon__line-2 {
+    opacity: 0;
+  }
+    /* When active, rotate line 3 to be righthand part of X */
+  .hamburger-icon__line-3 {
+    transform: translateY(-8px) translateX(0) rotate(-45deg);
+  }
 }
-
-
