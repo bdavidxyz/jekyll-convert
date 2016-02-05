@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 
-  {% include head.html %}
+{% include head.html %}
 
-  <body>
+<body>
 
-    {% include header.html %}
+  {% include header.html %}
+  <div class="overlay">
 
     <div class="page-content">
       <div class="wrapper">
@@ -14,8 +15,10 @@
     </div>
 
     {% include footer.html %}
-    {% include javascript.html %}
+  </div>
 
-  </body>
+  {% include javascript.html %}
+
+</body>
 
 </html>

@@ -16,11 +16,20 @@ header.page-head {
  left:0;
 }
 
-div.page-content {
+// div.page-content {
+//   padding-top:$pagehead-height;
+// }
+
+
+.overlay {
   padding-top:$pagehead-height;
 }
-
-
+.overlay:hover {
+  opacity: 0.2;
+}
+.first-visual {
+  height: 100vh;
+}
 
 
 /*------------------------------------*\
