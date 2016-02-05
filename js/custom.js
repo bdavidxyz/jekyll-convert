@@ -10,13 +10,22 @@ $(function() {
       $(this).toggleClass('is-active');
       // $('.menu-content').css({ 'top' : top + 'px' });
       // $('.menu-content').css({ 'display' : '' });
-      $('.menu-content').css({ 'visibility' : 'visible' });
+      if ( $('.menu-content').css('visibility') === 'hidden') {
+        $('.menu-content').css('visibility','visible');
+      }
+      else{
+        $('.menu-content').css('visibility','hidden');
+      }
 
-$('#element').on('scroll touchmove mousewheel', function(e){
-  e.preventDefault();
-  e.stopPropagation();
-  return false;
-});
+      // $('.menu-content').toggle();
+
+    // $('.menu-content').css({ 'visibility' : 'visible' });
+
+    // $('#element').on('scroll touchmove mousewheel', function(e){
+    //   e.preventDefault();
+    //   e.stopPropagation();
+    //   return false;
+    // });
 
       // $('.overlay').toggleClass('is-active');
      //  if ($('.overlay.is-active').length > 0) {
