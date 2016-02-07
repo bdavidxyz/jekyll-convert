@@ -2,9 +2,40 @@
 // jekyll-convert
 // =============================================================================
 
+/*------------------------------------*\
+       $ H1
+\*------------------------------------*/
+
+.hero {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.hero__item {
+  margin: auto;
+}
+
+.hero__item-title  {
+  font-family: 'Fjalla One', sans-serif;
+  // text-transform: uppercase;
+}
+
+@media (min-width: 70em) {
+  .hero__item-title  {
+    font-size:4rem;
+  }
+}
+
+@media (max-width: 70em) {
+  .hero__item-title  {
+    font-size:3rem;
+  }
+}
+
 
 /*------------------------------------*\
-       $HEADER AND CONTENT POSITION
+       $FIRST VISUAL
 \*------------------------------------*/
 $pagehead-height: 100px;
 
@@ -18,6 +49,7 @@ header.page-head {
 
 .first-visual {
   height: 100vh;
+  margin-top: -$pagehead-height; //magic numbers...
 }
 
 .menu-content {
@@ -33,28 +65,22 @@ header.page-head {
   padding-top: $pagehead-height;
   background:url(../img/triangle3.svg) no-repeat top center;
   background-image:url(../img/triangle3.svg);
-  background-position: 45% 10%;
+  background-position: 50% 9%;
   background-repeat: no-repeat;
   background-size: 50%;
   background-origin: padding-box;
-  // -webkit-mask: url(../img/triangle3.svg) no-repeat 50% 50%;
-  // mask: url(../img/triangle3.svg) no-repeat 50% 50%;
-  // -webkit-mask-size: 50%;
-  // mask-size: 50%;
-  // background-color:red;
 }
 
-// .iconik {
-//   width: 248px;
-//   height: 248px;
-//   display: inline-block;
+.blinking-caret:after {
+    content: '|';
+    animation: blink 0.6s infinite;
+    animation-direction: alternate-reverse;
+}
+@keyframes blink {
+    from { opacity: 0; }
+    to { opacity: 0.8; }
+}
 
-//   -webkit-mask: url(../img/triangle3.svg) no-repeat 50% 50%;
-//   mask: url(../img/triangle3.svg) no-repeat 50% 50%;
-//   -webkit-mask-size: cover;
-//   mask-size: cover;
-//   background-color:red;
-// }
 
 /*------------------------------------*\
                 $NAVBAR
