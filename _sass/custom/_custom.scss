@@ -62,13 +62,13 @@ header.page-head {
 }
 
 .overlay-container {
+  height: 100vh;
   padding-top: $pagehead-height;
   background:url(../img/triangle3.svg) no-repeat top center;
   background-image:url(../img/triangle3.svg);
-  background-position: 50% 9%;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: 50%;
-  background-origin: padding-box;
 }
 
 .blinking-caret:after {
