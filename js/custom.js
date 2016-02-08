@@ -15,8 +15,25 @@ $(function() {
     });
 
 
+    function SelectText(element) {
+      var doc = document
+      , text = doc.getElementById(element)
+      , range, selection
+      ;
+      if (doc.body.createTextRange) {
+        range = document.body.createTextRange();
+        range.moveToElementText(text);
+        range.select();
+      } else if (window.getSelection) {
+        selection = window.getSelection();
+        range = document.createRange();
+        range.selectNodeContents(text);
+        selection.removeAllRanges();
+        selection.addRange(range);
+      }
+    }
 
-    var theater = theaterJS({maxSpeed:250});
+    var theater = theaterJS({maxSpeed:200});
 
     theater
     .on('type:start, erase:start', function () {
@@ -29,19 +46,66 @@ $(function() {
       var currentActor = theater.getCurrentActor();
       var currentActorElement = currentActor.$element;
 
-      currentActorElement.classList.remove('blinking-caret');
+      // currentActorElement.classList.remove('blinking-caret');
     });
 
     theater
-    .addActor('js-animate-hero', {accuracy:1})
+    .addActor('js-animate-hero', {accuracy:1, speed: 0.6})
+
     .addScene('js-animate-hero:create web applications')
-    .addScene(1600)
+    // .addScene(-7, 'mother!')
+    .addScene(2000)
+    .addScene(function (done) {
+      SelectText('js-animate-hero');
+      done();
+    })
+    .addScene(1000)
+    .addScene(function (done) {
+      theater.getCurrentActor().displayValue = '';
+      done();
+    })
+    .addScene(1000)
+
     .addScene('js-animate-hero:automate growth hacks')
-    .addScene(1600)
+    .addScene(2000)
+    .addScene(function (done) {
+      SelectText('js-animate-hero');
+      done();
+    })
+    .addScene(1000)
+    .addScene(function (done) {
+      theater.getCurrentActor().displayValue = '';
+      done();
+    })
+    .addScene(1000)
+
     .addScene('js-animate-hero:design user interfaces')
-    .addScene(1600)
+        .addScene(2000)
+    .addScene(function (done) {
+      SelectText('js-animate-hero');
+      done();
+    })
+    .addScene(1000)
+    .addScene(function (done) {
+      theater.getCurrentActor().displayValue = '';
+      done();
+    })
+    .addScene(1000)
+
+
     .addScene('js-animate-hero:build corporate website')
-    .addScene(1600)
+        .addScene(2000)
+    .addScene(function (done) {
+      SelectText('js-animate-hero');
+      done();
+    })
+    .addScene(1000)
+    .addScene(function (done) {
+      theater.getCurrentActor().displayValue = '';
+      done();
+    })
+    .addScene(1000)
+
     .addScene(theater.replay);
 
 
