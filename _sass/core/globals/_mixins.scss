@@ -38,8 +38,8 @@ $break-large: 620px;
 }
 
 
-$break-small: 420px;
-$break-large: 720px;
+$break-small: 520px;
+$break-large: 1024px;
 
 @mixin respond-htl-to($media) {
   @if $media == handhelds {
