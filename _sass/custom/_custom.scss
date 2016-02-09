@@ -15,6 +15,9 @@
 .hero__item-container {
   margin: auto;
   max-height: 100vh;
+  h1, p {
+    line-height: 0.8em;
+  }
 }
 
 .hero__item {
@@ -23,25 +26,28 @@
 
 .hero__item-title  {
   font-family: 'Montserrat', sans-serif;
-  // text-transform: uppercase;
   text-align: center;
+  @include respond-htl-to(handhelds) { font-size:1.5rem;}
+  @include respond-htl-to(medium-screens) { font-size:2rem;}
+  @include respond-htl-to(wide-screens) { font-size:4rem;}
 }
 .hero__item-description  {
   @extend .hero__item-title;
   @extend h1;
 }
 
-@media (min-width: 70em) {
-  .hero__item-title  {
-    font-size:4rem;
-  }
-}
+// @media (min-width: 70em) {
+//   .hero__item-title  {
+//     font-size:4rem;
 
-@media (max-width: 70em) {
-  .hero__item-title  {
-    font-size:2rem;
-  }
-}
+//   }
+// }
+
+// @media (max-width: 70em) {
+//   .hero__item-title  {
+//     font-size:1.5rem;
+//   }
+// }
 .blinking-caret:after {
   content: '|';
   animation: blink 0.6s infinite;
@@ -69,9 +75,9 @@
 .hero__item-button button {
   display: inline-block;
   text-decoration: none;
-  border: 1px solid black;
-  height: 36px;
-  line-height: 36px;
+  border: 4px solid black;
+  height: 25px;
+  line-height: 25px;
   color: black;
   border-radius: 35px;
   background-clip: padding-box;
@@ -82,6 +88,10 @@
   cursor: pointer;
   zoom: 1;
   position: relative;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Montserrat";
+  font-size: 0.8em;
 }
 .hero__item-button button:hover {
   transition: 0.2s ease;
@@ -108,7 +118,7 @@ header.page-head {
 
 .first-visual {
   height: 100vh;
-  margin-top: -$pagehead-height/2; //magic numbers...
+  // margin-top: -$pagehead-height/2; //magic numbers...
 }
 
 .menu-content {
@@ -122,32 +132,14 @@ header.page-head {
 
 .overlay-container {
   height: 100vh;
-  padding-top: $pagehead-height;
+  // padding-top: $pagehead-height;
+  // @include respond-vtl-to(medium-screens) { padding-top: $pagehead-height;}
   background:url(../img/triangle3.svg) no-repeat top center;
   background-image:url(../img/triangle3.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 50%;
 }
-
-
-$break-small: 320px;
-$break-large: 1024px;
-
-@mixin respond-to($media) {
-  @if $media == handhelds {
-    @media only screen and (max-width: $break-small) { @content; }
-  }
-  @else if $media == medium-screens {
-    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
-  }
-  @else if $media == wide-screens {
-    @media only screen and (min-width: $break-large) { @content; }
-  }
-}
-
-
-
 
 
 /*------------------------------------*\
@@ -157,7 +149,7 @@ $break-large: 1024px;
   display: flex;
   flex-direction: row;
   height: $small-pagehead-height;
-  @include respond-to(medium-screens) { height: $pagehead-height;}
+  @include respond-vtl-to(medium-screens) { height: $pagehead-height;}
   background-color: rgba(255, 255, 255, 1);
 // justify-content: space-around;
 }
