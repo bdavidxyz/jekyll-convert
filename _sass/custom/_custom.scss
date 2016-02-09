@@ -25,7 +25,8 @@
 }
 
 .hero__item-title  {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Fjalla One', sans-serif;
+  text-transform: uppercase;
   text-align: center;
   @include respond-htl-to(handhelds) { font-size:1.5rem;}
   @include respond-htl-to(medium-screens) { font-size:2rem;}
@@ -107,7 +108,7 @@
   box-sizing: content-box;
   cursor: pointer;
   zoom: 1;
-  position: relative;
+  // position: relative;
   text-transform: uppercase;
   font-weight: bold;
   font-family: "Montserrat";
