@@ -12,13 +12,18 @@
 }
 
 
-.hero__item {
+.hero__item-container {
   margin: auto;
+  max-height: 100vh;
+}
+
+.hero__item {
+  // flex: 2 1 auto;
 }
 
 .hero__item-title  {
-  font-family: 'Fjalla One', sans-serif;
-  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  // text-transform: uppercase;
   text-align: center;
 }
 .hero__item-description  {
@@ -34,24 +39,64 @@
 
 @media (max-width: 70em) {
   .hero__item-title  {
-    font-size:3rem;
+    font-size:2rem;
   }
 }
 .blinking-caret:after {
-    content: '|';
-    animation: blink 0.6s infinite;
-    animation-direction: alternate-reverse;
+  content: '|';
+  animation: blink 0.6s infinite;
+  animation-direction: alternate-reverse;
 }
 @keyframes blink {
-    from { opacity: 0; }
-    to { opacity: 0.8; }
+  from { opacity: 0; }
+  to { opacity: 0.8; }
 }
 
+
+
+
+.hero__item-separator {
+  @extend .hero__item-description;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hero__item-button {
+  text-align: center;
+}
+
+.hero__item-button button {
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid black;
+  height: 36px;
+  line-height: 36px;
+  color: black;
+  border-radius: 35px;
+  background-clip: padding-box;
+  padding: .5em 1.5em;
+  transition: all 0.2s ease-out;
+  background: transparent;
+  box-sizing: content-box;
+  cursor: pointer;
+  zoom: 1;
+  position: relative;
+}
+.hero__item-button button:hover {
+  transition: 0.2s ease;
+  background-color: black;
+  color: #ffffff;
+}
+.hero__item-button button:focus {
+  outline: none;
+}
 
 /*------------------------------------*\
        $FIRST VISUAL
 \*------------------------------------*/
 $pagehead-height: 100px;
+$small-pagehead-height: 50px;
 
 header.page-head {
  width:100%;
@@ -63,7 +108,7 @@ header.page-head {
 
 .first-visual {
   height: 100vh;
-  margin-top: -$pagehead-height; //magic numbers...
+  margin-top: -$pagehead-height/2; //magic numbers...
 }
 
 .menu-content {
@@ -86,6 +131,24 @@ header.page-head {
 }
 
 
+$break-small: 320px;
+$break-large: 1024px;
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+}
+
+
+
+
 
 /*------------------------------------*\
                 $NAVBAR
@@ -93,8 +156,9 @@ header.page-head {
 .site-nav {
   display: flex;
   flex-direction: row;
-  height: 100px;
-  background-color: rgba(215, 215, 215, 1);
+  height: $small-pagehead-height;
+  @include respond-to(medium-screens) { height: $pagehead-height;}
+  background-color: rgba(255, 255, 255, 1);
 // justify-content: space-around;
 }
 .site-nav__item {
@@ -111,9 +175,10 @@ header.page-head {
 \*------------------------------------*/
 .hamburger {
   border: 0;
-  padding: 2.4rem;
+  // padding: 2.4rem;
   display: inline-block;
 }
+
 .hamburger-top {
   padding: 1rem;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1.000);
