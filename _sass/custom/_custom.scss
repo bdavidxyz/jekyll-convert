@@ -25,30 +25,18 @@
 }
 
 .hero__item-title  {
-  font-family: 'Fjalla One', sans-serif;
-  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
   text-align: center;
   @include respond-htl-to(handhelds) { font-size:1.5rem;}
   @include respond-htl-to(medium-screens) { font-size:2rem;}
-  @include respond-htl-to(wide-screens) { font-size:4rem;}
+  @include respond-htl-to(wide-screens) { font-size:3rem;}
 }
 .hero__item-description  {
   @extend .hero__item-title;
   @extend h1;
+  font-weight: bold;
 }
 
-// @media (min-width: 70em) {
-//   .hero__item-title  {
-//     font-size:4rem;
-
-//   }
-// }
-
-// @media (max-width: 70em) {
-//   .hero__item-title  {
-//     font-size:1.5rem;
-//   }
-// }
 .blinking-caret:after {
   content: '|';
   animation: blink 0.6s infinite;
@@ -56,7 +44,7 @@
 }
 @keyframes blink {
   from { opacity: 0; }
-  to { opacity: 0.8; }
+  to { opacity: 0.8;}
 }
 
 
@@ -71,24 +59,6 @@
     margin-right: auto;
 }
 
-.hero__item-separator {
-  // @extend .hero__item-description;
-  // position: relative;
-  // top: 50%;
-  // transform: translateY(-50%);
-  // text-align: center;
-  // margin: auto;
-  // hr.style-one {
-  //   // text-align: center;
-  //   border: 0;
-  //   height: 2px;
-  //   width:50px;
-  //   background: #333;
-  //   background-image: linear-gradient(to right, #ccc, #333, #ccc);
-  // }
-
-}
-
 .hero__item-button {
   text-align: center;
 }
@@ -96,10 +66,10 @@
 .hero__item-button button {
   display: inline-block;
   text-decoration: none;
-  border: 4px solid black;
+  border: 4px solid orange;
   height: 25px;
   line-height: 25px;
-  color: black;
+  color: orange;
   border-radius: 35px;
   background-clip: padding-box;
   padding: .5em 1.5em;
@@ -108,7 +78,6 @@
   box-sizing: content-box;
   cursor: pointer;
   zoom: 1;
-  // position: relative;
   text-transform: uppercase;
   font-weight: bold;
   font-family: "Montserrat";
@@ -116,7 +85,7 @@
 }
 .hero__item-button button:hover {
   transition: 0.2s ease;
-  background-color: black;
+  background-color: orange;
   color: #ffffff;
 }
 .hero__item-button button:focus {
@@ -133,15 +102,16 @@ $small-pagehead-height: 50px;
 
 header.page-head {
  width:100%;
- height:$pagehead-height;
+ height: $small-pagehead-height;
+ @include respond-vtl-to(medium-screens) { height: $pagehead-height;}
  position:fixed;
  top:0;
  left:0;
+ z-index: 99; // should be on top
 }
 
 .first-visual {
   height: 100vh;
-  // margin-top: -$pagehead-height/2; //magic numbers...
 }
 
 .menu-content {
@@ -150,13 +120,13 @@ header.page-head {
   height:100%;
   background-color: rgba(255, 255, 255, 0.97);
   position: fixed;
-  top:$pagehead-height;
+  top: $small-pagehead-height;
+  z-index: 99; // should be on top
+  @include respond-vtl-to(medium-screens) { top: $pagehead-height;}
 }
 
 .overlay-container {
   height: 100vh;
-  // padding-top: $pagehead-height;
-  // @include respond-vtl-to(medium-screens) { padding-top: $pagehead-height;}
   background:url(../img/triangle3.svg) no-repeat top center;
   background-image:url(../img/triangle3.svg);
   background-position: center;
@@ -190,7 +160,6 @@ header.page-head {
 \*------------------------------------*/
 .hamburger {
   border: 0;
-  // padding: 2.4rem;
   display: inline-block;
 }
 
