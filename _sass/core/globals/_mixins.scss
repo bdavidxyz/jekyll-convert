@@ -22,34 +22,34 @@
 }
 
 
-$break-small: 420px;
-$break-large: 620px;
+// $bp-extra-small: 420px;
+// $break-small: 620px;
 
 @mixin respond-vtl-to($media) {
   @if $media == handhelds {
-    @media only screen and (max-height: $break-small) { @content; }
+    @media only screen and (max-height: $bp-extra-small) { @content; }
   }
   @else if $media == medium-screens {
-    @media only screen and (min-height: $break-small + 1) and (max-height: $break-large - 1) { @content; }
+    @media only screen and (min-height: $bp-extra-small + 1) and (max-height: $break-small - 1) { @content; }
   }
   @else if $media == wide-screens {
-    @media only screen and (min-height: $break-large) { @content; }
+    @media only screen and (min-height: $break-small) { @content; }
   }
 }
 
 
-$break-small: 520px;
-$break-large: 1024px;
+$bp-extra-small: 520px;
+$break-small: 1024px;
 
 @mixin respond-htl-to($media) {
   @if $media == handhelds {
-    @media only screen and (max-width: $break-small) { @content; }
+    @media only screen and (max-width: $bp-extra-small) { @content; }
   }
   @else if $media == medium-screens {
-    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+    @media only screen and (min-width: $bp-extra-small + 1) and (max-width: $break-small - 1) { @content; }
   }
   @else if $media == wide-screens {
-    @media only screen and (min-width: $break-large) { @content; }
+    @media only screen and (min-width: $break-small) { @content; }
   }
 }
 

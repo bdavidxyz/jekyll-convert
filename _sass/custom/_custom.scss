@@ -20,10 +20,6 @@
   }
 }
 
-.hero__item {
-  // flex: 2 1 auto;
-}
-
 .hero__item-title  {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
@@ -102,8 +98,6 @@ $small-pagehead-height: 50px;
 
 header.page-head {
  width:100%;
- height: $small-pagehead-height;
- @include respond-vtl-to(medium-screens) { height: $pagehead-height;}
  position:fixed;
  top:0;
  left:0;
@@ -120,14 +114,33 @@ header.page-head {
   height:100%;
   background-color: rgba(255, 255, 255, 0.97);
   position: fixed;
-  top: $small-pagehead-height;
   z-index: 99; // should be on top
+  top: $small-pagehead-height;
   @include respond-vtl-to(medium-screens) { top: $pagehead-height;}
 }
 
+
+.menu-content__layout {
+  display: flex;
+  flex-direction: column;
+  height: 80vh; //not 100 because of navbar, doesn't have to be pixel perfect to look great.
+}
+.menu-content__inner-layout {
+  margin: auto;
+}
+.menu-content__item  {
+  margin-bottom: unitSize(2);
+  @include respond-htl-to(medium-screens) { margin-bottom: unitSize(4);}
+  a {
+    font-size: unitSize(2);
+    @include respond-htl-to(medium-screens) { font-size: unitSize(4);}
+    @include respond-htl-to(wide-screens) { font-size: unitSize(4);}
+  }
+}
+
+
 .overlay-container {
   height: 100vh;
-  background:url(../img/triangle3.svg) no-repeat top center;
   background-image:url(../img/triangle3.svg);
   background-position: center;
   background-repeat: no-repeat;
@@ -144,10 +157,13 @@ header.page-head {
   height: $small-pagehead-height;
   @include respond-vtl-to(medium-screens) { height: $pagehead-height;}
   background-color: rgba(255, 255, 255, 1);
-// justify-content: space-around;
 }
 .site-nav__item {
   margin: auto;
+}
+.site-nav__item-icon {
+  padding-top: 25px;
+  padding-left: 25px; //magic number here, logo can't align with everything else
 }
 
 
