@@ -132,7 +132,8 @@ hr {
 }
 
 // Figures
-figure { margin: unitSize(3) 1em; }
+figure { margin: unitSize(5) 1em; }
+// figure.highlight { margin: 0; }
 
 figcaption {
   color: getColor(text, secondary);

@@ -1,0 +1,13 @@
+<!-- this page is used to inject global-accessed var within templates -->
+{% assign base = 'default' %}
+{% assign depth = page.url | split: '/' | size %}
+{% if    depth == 0 %}{% assign base = '.' %}
+{% elsif depth == 1 %}{% assign base = 1 %}
+{% elsif depth == 2 %}{% assign base = '../' %}
+{% elsif depth == 3 %}{% assign base = 3 %}
+{% endif %}
+
+{% assign pageval = 'default' %}
+{% if page.path != 'index.html' %}
+  {% assign pageval = 'other' %}
+{% endif %}

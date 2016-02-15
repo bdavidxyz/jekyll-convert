@@ -42,10 +42,10 @@
 // $container-width: 1200px;
 
 // Gutter size in pixels (without the unit we can do math easily)
-// $gutter: 30;
+$gutter: 30;
 
 // Number of columns in a row
-// $num-columns: 12;
+$num-columns: 24;
 
 // If you only want to use the mixins for "semantic grids" set this to true
 // $only-semantic: false;
@@ -55,11 +55,11 @@
 // Typography
 // ----------
 
-$font-family:          "Merriweather Sans", "Helvetica", "Arial", sans-serif;
+$font-family:          "Merriweather", "Helvetica", "Arial", sans-serif;
 $font-family-headings: "Montserrat", "Arial", sans-serif;
 $font-family-print:    "Georgia", "Times New Roman", "Times", serif;
 $font-family-mono:     "Consolas", monospace;
-$font-base-size:       18;
+$font-base-size:       17;
 
 
 //

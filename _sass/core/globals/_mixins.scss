@@ -22,9 +22,6 @@
 }
 
 
-// $bp-extra-small: 420px;
-// $break-small: 620px;
-
 @mixin respond-vtl-to($media) {
   @if $media == handhelds {
     @media only screen and (max-height: $bp-extra-small) { @content; }

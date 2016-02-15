@@ -2,6 +2,21 @@
 // jekyll-convert
 // =============================================================================
 
+
+/*------------------------------------*\
+       $ POST
+\*------------------------------------*/
+
+.post {
+
+}
+
+/*------------------------------------*\
+       $ GLOBAL DEFAULT
+\*------------------------------------*/
+
+
+
 /*------------------------------------*\
        $ H1
 \*------------------------------------*/
@@ -45,14 +60,14 @@
 
 
 .hero__item-separator:before {
-   content: " ";
-    border: 1px solid black;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    display: block;
-    max-width: 20px;
-    margin-left: auto;
-    margin-right: auto;
+ content: " ";
+ border: 1px solid black;
+ margin-top: 30px;
+ margin-bottom: 30px;
+ display: block;
+ max-width: 20px;
+ margin-left: auto;
+ margin-right: auto;
 }
 
 .hero__item-button {
@@ -131,6 +146,7 @@ header.page-head {
 .menu-content__item  {
   margin-bottom: unitSize(2);
   @include respond-htl-to(medium-screens) { margin-bottom: unitSize(4);}
+  @include respond-htl-to(wide-screens) { margin-bottom: unitSize(4);}
   a {
     font-size: unitSize(2);
     @include respond-htl-to(medium-screens) { font-size: unitSize(4);}
@@ -138,15 +154,40 @@ header.page-head {
   }
 }
 
-
 .overlay-container {
-  height: 100vh;
-  background-image:url(../img/triangle3.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 50%;
+  // Only for landing page of home
+  &.default {
+    height: 100vh;
+    background-image:url(../img/triangle3.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+  }
+  // Split behaviour
+  &.other {
+    padding-top: $small-pagehead-height;
+    @include respond-vtl-to(medium-screens) { padding-top: $pagehead-height;}
+  }
 }
 
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+p {
+  font-weight: 300;
+  line-height: 1.8rem;
+  letter-spacing: 0.01rem;
+  color:#333333;
+  font-size: 0.98rem;
+}
 
 /*------------------------------------*\
                 $NAVBAR

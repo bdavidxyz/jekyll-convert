@@ -1,37 +1,35 @@
 <!DOCTYPE html>
 <html>
 
+{% include base.html %}
 {% include head.html %}
 
 <body>
 
   {% include header.html %}
 
-
-
-  <div class="overlay-container">
-    <div class="menu-content">
-      <div class="wrapper">
-        <div class="menu-content__layout">
-          <div class="menu-content__inner-layout">
-          <div class="menu-content__item"><small>01</small><a href=""> Journal</a></div>
-            <div class="menu-content__item"><small>02</small><a href=""> About</a></div>
-            <div class="menu-content__item"><small>03</small><a href=""> Contact</a></div>
+  <main>
+    <div class="overlay-container {{pageval}}" container>
+      <div class="menu-content">
+        <div class="wrapper">
+          <div class="menu-content__layout">
+            <div class="menu-content__inner-layout">
+              <div class="menu-content__item"><small>01</small><a href=""> Journal</a></div>
+              <div class="menu-content__item"><small>02</small><a href="{{ site.baseurl }}/about"> About</a></div>
+              <div class="menu-content__item"><small>03</small><a href=""> Contact</a></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
+      <div class="page-content">
+        <div class="wrapper">
+          {{ content }}
+        </div>
       </div>
     </div>
+  </main>
 
-
-
-    {% include footer.html %}
-  </div>
-
+  {% include footer.html %}
 
   {% include javascript.html %}
 
