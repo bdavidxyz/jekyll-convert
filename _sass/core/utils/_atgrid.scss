@@ -95,7 +95,7 @@ $only-semantic: false !default;
   width: 100%;
 
   @if $size < 1 {
-    @media (min-width: $bp-small) {
+    @media (min-width: $bp-extra-small) {
       width: ($size * 100%);
     }
   }
@@ -168,7 +168,7 @@ $only-semantic: false !default;
   //
 
   // Create columns on devices larger than 48em
-  @media (min-width: $bp-small) {
+  @media (min-width: $bp-extra-small) {
     // Create columns
     @for $i from 1 through $num-columns {
       [#{$prefix}column~="#{$i}"] {
