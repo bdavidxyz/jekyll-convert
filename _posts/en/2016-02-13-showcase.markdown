@@ -1,8 +1,8 @@
 ---
+title: Showcase
 layout: post
-title:  "Showcase"
-date:   2016-02-14 11:15:13 +0100
-categories: jekyll update
+type: pages
+lang: en
 ---
 
 # H1
