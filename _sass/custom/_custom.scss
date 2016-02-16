@@ -179,7 +179,7 @@ header.page-head {
   // Only for landing page of home
   &.default {
     height: 100vh;
-    background-image:url(../img/triangle3.svg);
+    background-image:url("data:image/svg+xml,%3C%3Fxml%20version%3D'1.0'%20encoding%3D'utf-8'%3F%3E%20%3C!DOCTYPE%20svg%20PUBLIC%20'-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN'%20'http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd'%3E%20%3Csvg%20version%3D'1.1'%20id%3D'Layer_1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20xmlns%3Axlink%3D'http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink'%20x%3D'0px'%20y%3D'0px'%20%09%20width%3D'411.075px'%20height%3D'255.153px'%20viewBox%3D'0%200%20411.075%20255.153'%20enable-background%3D'new%200%200%20411.075%20255.153'%20%09%20xml%3Aspace%3D'preserve'%3E%20%3Cpolygon%20opacity%3D'0.3'%20fill%3D'#{lighten($theme-color, 37%)}'%20points%3D'1.041%2C0.618%20408.652%2C87.913%200.502%2C172.653%20%20%20'%2F%3E%20%3Cpolygon%20opacity%3D'0.2'%20fill%3D'#{lighten($theme-color, 37%)}'%20points%3D'406.719%2C127.295%20259.82%2C254.491%20%09113.052%2C127.144%20'%2F%3E%20%3C%2Fsvg%3E");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 50%;
