@@ -2,6 +2,10 @@
 // Custom Global Variables
 // =============================================================================
 
+//
+// Custom, globally available vars
+// ----
+$theme-color: orange;
 
 //
 // Base
@@ -92,7 +96,7 @@ $colors: (
   text: (
     "primary":   #666,
     "secondary": #aaa,
-    "heading":   #222,
+    "heading":   $theme-color,
     "ui":        white
   ),
 
