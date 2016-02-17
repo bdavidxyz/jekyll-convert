@@ -18,7 +18,20 @@
         </div>
       </div>
       <div class="site-nav__item site-nav__item-translate">
-        <a href="#"><small>fr</small></a> | <a href="#"><small>en</small></a>
+        {% if page.layout == "post" %}
+        {% assign posts=site.posts | where:"name", page.name | sort: 'path' %}
+        <ul>
+          {% for post in posts %}
+          <li class="lang">
+            <a href="{{ site.baseurl }}{{ post.url }}" class="{{ post.lang }}">{{ post.lang }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+
+        <a href="{{ site.baseurl }}{{site.t['fr'][page.title].url}}"><small>fr</small></a>|<a href="{{ site.baseurl }}{{site.t['en'][page.title].url}}"><small>en</small></a>
+        {% endif %}
+
       </div>
     </nav>
 

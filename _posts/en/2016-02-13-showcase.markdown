@@ -3,6 +3,7 @@ title: Showcase
 layout: post
 type: pages
 lang: en
+name: showcase
 ---
 
 # H1

@@ -34,3 +34,15 @@ defaults:
     values:
       layout: default
       lang: fr
+
+t:
+  en:
+    home:
+      url: "/"
+    about:
+      url: "/about/"
+  fr:
+    home:
+      url: "/accueil/"
+    about:
+      url: "/a-propos/"
