@@ -7,7 +7,9 @@
 {% elsif depth == 3 %}{% assign base = 3 %}
 {% endif %}
 
-{% assign pageval = 'default' %}
-{% if page.path != 'index.html' %}
-  {% assign pageval = 'other' %}
+{% assign pageval = 'other' %}
+{% if page.path == 'index.html' %}
+  {% assign pageval = 'default' %}
+{% elsif page.path == 'accueil.html' %}
+  {% assign pageval = 'default' %}
 {% endif %}

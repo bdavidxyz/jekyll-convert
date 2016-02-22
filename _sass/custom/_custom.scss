@@ -3,6 +3,21 @@
 // =============================================================================
 
 
+.site-nav__item-icon {
+  .slide-in {
+    button {
+      display: none;
+    }
+  }
+  .slide-out {
+    img {
+      display: none;
+    }
+  }
+}
+
+
+
 /*------------------------------------*\
        $ POST
 \*------------------------------------*/
@@ -13,15 +28,24 @@
     line-height: 1.8;
     letter-spacing: 0.01rem;
     color:#333333;
-    font-size: 0.98rem;
+    font-size: 1.05rem;
   }
 }
 
 .post-title {
   margin-top: unitSize(4);
-  @include respond-vtl-to(medium-screens) { margin-top: unitSize(8);}
-  @include respond-vtl-to(wide-screens) { margin-top: unitSize(8);}
+  @include respond-vtl-to(medium-screens) { margin-top: unitSize(0);}
+  @include respond-vtl-to(wide-screens) { margin-top: unitSize(0);}
 }
+
+
+
+
+
+
+
+
+
 
 /*------------------------------------*\
        $ GLOBAL DEFAULT
@@ -36,6 +60,11 @@ body {
 main {
   flex: 1;
 }
+
+
+
+
+
 
 
 
@@ -130,6 +159,11 @@ main {
 
 
 
+
+
+
+
+
 /*------------------------------------*\
        $FIRST VISUAL
 \*------------------------------------*/
@@ -194,6 +228,10 @@ header.page-head {
 
 
 
+
+
+
+
 /*------------------------------------*\
                 $NAVBAR
 \*------------------------------------*/
@@ -211,6 +249,13 @@ header.page-head {
   padding-top: 25px;
   padding-left: 25px; //magic number here, logo can't align with everything else
 }
+
+.site-nav__item-translate-container {
+
+}
+
+
+
 
 
 

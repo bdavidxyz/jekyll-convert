@@ -1,5 +1,9 @@
 // When the DOM is ready,
 $(function() {
+
+  var _$pageheadheight = '100px';
+  var _$smallpageheadheight = '50px';
+
   var hamburgertoggle = $('.hamburger--toggle');
 
     // Toggle
@@ -13,6 +17,70 @@ $(function() {
         $('.menu-content').css('visibility','hidden');
       }
     });
+
+
+
+    //little cta appears when scroll down
+    //Function to the css rule
+    function checkSize(){
+      var reset_to_big_height = false;
+      if ($(".site-nav").css("height") === _$pageheadheight ){
+        console.log("kboum");
+        reset_to_big_height = true;
+      }
+      var sclog;
+      var attempt = 0;
+      window.onscroll = function() {scrollMove()};
+      function scrollMove() {
+        attempt += 1;
+        var scrolledTop = window.pageYOffset;
+        // console.log('scrolled ' + scrolledTop);
+        if (scrolledTop > 250) {
+          sclog = true;
+          $(".site-nav").css("height", _$smallpageheadheight);
+          document.getElementById("main-icon").className = "slide-out";
+        } else if (sclog == true && scrolledTop == 0) {
+          if (reset_to_big_height)
+            $(".site-nav").css("height", _$pageheadheight);
+          document.getElementById("main-icon").className = "slide-in";
+          sclog = false;
+        }
+      }
+
+
+    }
+
+    checkSize();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     function SelectText(element) {
@@ -33,82 +101,84 @@ $(function() {
       }
     }
 
-    var theater = theaterJS({maxSpeed:200});
-
-    theater
-    .on('type:start, erase:start', function () {
-      var currentActor = theater.getCurrentActor();
-      var currentActorElement = currentActor.$element;
-
-      currentActorElement.classList.add('blinking-caret');
-    })
-    .on('type:end, erase:end', function () {
-      var currentActor = theater.getCurrentActor();
-      var currentActorElement = currentActor.$element;
-
-      // currentActorElement.classList.remove('blinking-caret');
-    });
-
-    theater
-    .addActor('js-animate-hero', {accuracy:1, speed: 0.6})
-
-    .addScene('js-animate-hero:create web applications')
-    // .addScene(-7, 'mother!')
-    .addScene(2000)
-    .addScene(function (done) {
-      SelectText('js-animate-hero');
-      done();
-    })
-    .addScene(1000)
-    .addScene(function (done) {
-      theater.getCurrentActor().displayValue = '';
-      done();
-    })
-    .addScene(1000)
-
-    .addScene('js-animate-hero:automate growth hacks')
-    .addScene(2000)
-    .addScene(function (done) {
-      SelectText('js-animate-hero');
-      done();
-    })
-    .addScene(1000)
-    .addScene(function (done) {
-      theater.getCurrentActor().displayValue = '';
-      done();
-    })
-    .addScene(1000)
-
-    .addScene('js-animate-hero:design user interfaces')
-        .addScene(2000)
-    .addScene(function (done) {
-      SelectText('js-animate-hero');
-      done();
-    })
-    .addScene(1000)
-    .addScene(function (done) {
-      theater.getCurrentActor().displayValue = '';
-      done();
-    })
-    .addScene(1000)
+    //hack here
+    if ($('.overlay-container.default').length > 0) {
 
 
-    .addScene('js-animate-hero:build corporate website')
-        .addScene(2000)
-    .addScene(function (done) {
-      SelectText('js-animate-hero');
-      done();
-    })
-    .addScene(1000)
-    .addScene(function (done) {
-      theater.getCurrentActor().displayValue = '';
-      done();
-    })
-    .addScene(1000)
+      var theater = theaterJS({maxSpeed:200});
 
-    .addScene(theater.replay);
+      theater
+      .on('type:start, erase:start', function () {
+        var currentActor = theater.getCurrentActor();
+        var currentActorElement = currentActor.$element;
+
+        currentActorElement.classList.add('blinking-caret');
+      })
+      .on('type:end, erase:end', function () {
+        var currentActor = theater.getCurrentActor();
+        var currentActorElement = currentActor.$element;
+
+      });
+
+      theater
+      .addActor('js-animate-hero', {accuracy:1, speed: 0.6})
+
+      .addScene('js-animate-hero:create web applications')
+      .addScene(2000)
+      .addScene(function (done) {
+        SelectText('js-animate-hero');
+        done();
+      })
+      .addScene(1000)
+      .addScene(function (done) {
+        theater.getCurrentActor().displayValue = '';
+        done();
+      })
+      .addScene(1000)
+
+      .addScene('js-animate-hero:automate growth hacks')
+      .addScene(2000)
+      .addScene(function (done) {
+        SelectText('js-animate-hero');
+        done();
+      })
+      .addScene(1000)
+      .addScene(function (done) {
+        theater.getCurrentActor().displayValue = '';
+        done();
+      })
+      .addScene(1000)
+
+      .addScene('js-animate-hero:design user interfaces')
+      .addScene(2000)
+      .addScene(function (done) {
+        SelectText('js-animate-hero');
+        done();
+      })
+      .addScene(1000)
+      .addScene(function (done) {
+        theater.getCurrentActor().displayValue = '';
+        done();
+      })
+      .addScene(1000)
 
 
+      .addScene('js-animate-hero:build corporate website')
+      .addScene(2000)
+      .addScene(function (done) {
+        SelectText('js-animate-hero');
+        done();
+      })
+      .addScene(1000)
+      .addScene(function (done) {
+        theater.getCurrentActor().displayValue = '';
+        done();
+      })
+      .addScene(1000)
+
+      .addScene(theater.replay);
+
+    }
   });
 
 

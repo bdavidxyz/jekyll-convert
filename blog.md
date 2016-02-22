@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Journal
-lang: en
-permalink: /journal/
+title: Blog
+lang: fr
+permalink: /blog/
 uid: journal
 ---
 

@@ -39,10 +39,21 @@ t:
   en:
     home:
       url: "/"
+      translation: "home"
     about:
       url: "/about/"
+      translation: "about"
+    journal:
+      url: "/journal/"
+      translation: "journal"
   fr:
     home:
       url: "/accueil/"
+      translation: "accueil"
     about:
       url: "/a-propos/"
+      translation: "A propos"
+    journal:
+      url: "/blog/"
+      translation: "journal"
+
