@@ -18,10 +18,19 @@
   }
 }
 
-.post-title {
+.post p.post-meta {
+  @extend h5;
+  font-weight: bold;
+  margin-bottom: unitSize(4);
+  margin-top: unitSize(6);
+  color:getColor(gray, lighter);
+  text-transform: uppercase;
+}
+
+.post-header {
   margin-top: unitSize(4);
-  @include respond-vtl-to(medium-screens) { margin-top: unitSize(0);}
-  @include respond-vtl-to(wide-screens) { margin-top: unitSize(0);}
+  @include respond-htl-to(medium-screens) { margin-top: unitSize(6);}
+  @include respond-htl-to(wide-screens) { margin-top: unitSize(8);}
 }
 
 /*mobile first : default to super small devices*/
@@ -287,16 +296,16 @@ header.page-head {
 }
 
 .site-nav.slide-in {
-  transition: all 1s ease-out;
-  transition: all 1s ease-out;
-  -webkit-transition: all 1s ease-out; /* Safari */
-  -moz-transition: all 1s ease-out; /* FF */
+  transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease; /* Safari */
+  -moz-transition: all 1s ease; /* FF */
 }
 .site-nav.slide-out {
-  transition: all 1s ease-out;
-  transition: all 1s ease-out;
-  -webkit-transition: all 1s ease-out; /* Safari */
-  -moz-transition: all 1s ease-out; /* FF */
+  transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease; /* Safari */
+  -moz-transition: all 1s ease; /* FF */
 }
 
 
