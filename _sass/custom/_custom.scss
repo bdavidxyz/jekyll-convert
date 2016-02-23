@@ -24,9 +24,41 @@
   @include respond-vtl-to(wide-screens) { margin-top: unitSize(0);}
 }
 
-
-
-
+/*mobile first : default to super small devices*/
+@media screen and (max-width: $bp-extra-small) {
+  .post__columns-left {
+    display: none;
+  }
+  .post__columns-mid {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .post__columns-right {
+    display: none;
+  }
+}
+@media screen and (min-width: $bp-extra-small) {
+  .post__columns-left {
+    @include column(1/6, false)
+  }
+  .post__columns-mid {
+    @include column(4/6, false)
+  }
+  .post__columns-right {
+    @include column(1/6, false)
+  }
+}
+@media screen and (min-width: $bp-medium) {
+  .post__columns-left {
+    @include column(5/24, false)
+  }
+  .post__columns-mid {
+    @include column(14/24, false)
+  }
+  .post__columns-right {
+    @include column(5/24, false)
+  }
+}
 
 
 

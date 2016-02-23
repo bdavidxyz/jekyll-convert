@@ -38,10 +38,12 @@ $(function() {
         if (scrolledTop > 250) {
           sclog = true;
           $(".site-nav").css("height", _$smallpageheadheight);
+          $(".menu-content").css("top", _$smallpageheadheight);
           $(".site-nav").addClass('slide-out');
           $(".site-nav").removeClass('slide-in');
         } else if (sclog == true && scrolledTop == 0) {
           if (reset_to_big_height) {
+            $(".menu-content").css("top", _$pageheadheight);
             $(".site-nav").css("height", _$pageheadheight);
           }
           $(".site-nav").addClass('slide-in');
