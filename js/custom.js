@@ -39,10 +39,15 @@ $(function() {
           sclog = true;
           $(".site-nav").css("height", _$smallpageheadheight);
           document.getElementById("main-icon").className = "slide-out";
+          $(".site-nav").addClass('slide-out');
+          $(".site-nav").removeClass('slide-in');
         } else if (sclog == true && scrolledTop == 0) {
-          if (reset_to_big_height)
+          if (reset_to_big_height) {
             $(".site-nav").css("height", _$pageheadheight);
+          }
           document.getElementById("main-icon").className = "slide-in";
+          $(".site-nav").addClass('slide-in');
+          $(".site-nav").removeClass('slide-out');
           sclog = false;
         }
       }

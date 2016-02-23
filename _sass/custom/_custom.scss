@@ -3,20 +3,6 @@
 // =============================================================================
 
 
-.site-nav__item-icon {
-  .slide-in {
-    button {
-      display: none;
-    }
-  }
-  .slide-out {
-    img {
-      display: none;
-    }
-  }
-}
-
-
 
 /*------------------------------------*\
        $ POST
@@ -245,13 +231,34 @@ header.page-head {
 .site-nav__item {
   margin: auto;
 }
-.site-nav__item-icon {
+
+.site-nav__item-icon-img {
   padding-top: 25px;
   padding-left: 25px; //magic number here, logo can't align with everything else
+
 }
 
-.site-nav__item-translate-container {
 
+.slide-in {
+  .site-nav__item-icon {
+    button {
+      display: none;
+    }
+  }
+}
+.slide-out {
+  .site-nav__item-icon {
+    img {
+      display: none;
+    }
+  }
+}
+
+.site-nav.slide-in {
+  transition: all 1s ease-out;
+}
+.site-nav.slide-out {
+  transition: all 1s ease-out;
 }
 
 
