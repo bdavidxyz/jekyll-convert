@@ -227,14 +227,18 @@ header.page-head {
 }
 .menu-content__item  {
   margin-bottom: unitSize(2);
-  @include respond-htl-to(medium-screens) { margin-bottom: unitSize(4);}
-  @include respond-htl-to(wide-screens) { margin-bottom: unitSize(4);}
+  @include respond-vtl-to(medium-screens) { margin-bottom: unitSize(3);}
+  @include respond-vtl-to(wide-screens) { margin-bottom: unitSize(4);}
   a {
     font-size: unitSize(2);
-    @include respond-htl-to(medium-screens) { font-size: unitSize(4);}
-    @include respond-htl-to(wide-screens) { font-size: unitSize(4);}
+    @include respond-vtl-to(medium-screens) { font-size: unitSize(3);}
+    @include respond-vtl-to(wide-screens) { font-size: unitSize(4);}
   }
 }
+.menu-content__item-number {
+  vertical-align: middle;
+}
+
 
 .overlay-container {
   // Only for landing page of home

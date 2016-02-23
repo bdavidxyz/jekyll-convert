@@ -14,15 +14,18 @@
         <div class="wrapper" container>
           <div class="menu-content__layout">
             <div class="menu-content__inner-layout">
-              <ul>
+              <div>
                 {% for menu in site.t[page.lang] %}
-                <li><a href="{{ site.baseurl }}{{menu[1].url}}">{{menu[1].translation}}</a></li>
+                <div class="menu-content__item">
+                  <span class="menu-content__item-number">0{{forloop.index}} </span>
+                  <a href="{{ site.baseurl }}{{menu[1].url}}"> {{menu[1].translation}}</a>
+                </div>
                 {% endfor %}
-              </ul>
-              <div class="menu-content__item"><small>01</small><a href="{{ site.baseurl }}/"> Home</a></div>
+              </div>
+             <!--  <div class="menu-content__item"><small>01</small><a href="{{ site.baseurl }}/"> Home</a></div>
               <div class="menu-content__item"><small>02</small><a href="{{ site.baseurl }}/journal/"> Journal</a></div>
               <div class="menu-content__item"><small>03</small><a href="{{ site.baseurl }}/about/"> About</a></div>
-              <div class="menu-content__item"><small>04</small><a href=""> Contact</a></div>
+              <div class="menu-content__item"><small>04</small><a href=""> Contact</a></div> -->
             </div>
           </div>
         </div>
