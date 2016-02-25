@@ -2,7 +2,32 @@
 // jekyll-convert
 // =============================================================================
 
+.journal-post-line {
+  margin-bottom: unitSize(2);
+}
 
+.journal-post-time {
+  float:right;
+  @extend h6;
+  font-weight: bold;
+  color:getColor(gray, lighter);
+  text-transform: uppercase;
+}
+
+.journal-post-title {
+   @extend h4;
+  // float:left;
+  color: getColor(gray, darker);
+}
+
+.page-header {
+  @extend .post-header;
+  margin-bottom: unitSize(4);
+  // margin-top: unitSize(4);
+  // @include respond-htl-to(medium-screens) { margin-top: unitSize(6);}
+  // @include respond-htl-to(wide-screens) { margin-top: unitSize(8);}
+  // text-align: center;
+}
 
 /*------------------------------------*\
        $ POST

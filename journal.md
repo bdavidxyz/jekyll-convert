@@ -7,11 +7,16 @@ uid: journal
 ---
 
 {% assign posts=site.posts | where:"lang", page.lang %}
-<ul>
+<div>
 {% for post in posts %}
-    <li class="lang">
-        <a href="{{ site.baseurl }}{{ post.url }}" class="{{ post.lang }}">{{ post.title }}</a>
-    </li>
+    <div class="lang">
+        <a href="{{ site.baseurl }}{{ post.url }}" class="{{ post.lang }}">
+        <div class="journal-post-line">
+          <span class='journal-post-title'>{{ post.title }}</span>
+          <span class='journal-post-time'><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></span>
+        </div>
+        </a>
+    </div>
 {% endfor %}
-</ul>
+</div>
 
